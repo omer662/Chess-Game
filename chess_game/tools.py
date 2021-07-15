@@ -36,9 +36,9 @@ class Tool(object):
     def handle_castle(self, pos):
         if type(self) == King and abs(self.position[1] - pos[1]) == 2:
             self.player.castles = [False, False, False]
-            if pos[1] == 2:
+            if pos[1] == 2 and self.player.castles[:2]:
                 self.player.tools[6].move([pos[0], 3])
-            elif pos[1] == 6:
+            elif pos[1] == 6 and self.player.castles[1:]:
                 self.player.tools[7].move([pos[0], 5])
         elif type(self) == Rook:
             if self.position[1] == 0:
@@ -99,6 +99,8 @@ class Tool(object):
         if type(self) == Pawn:
             self.two_move = False
             self.player.since_pawn_move = 0
+        elif type(self) == King:
+            self.player.castles[1] = False
         self.eat(pos)
         self.handle_coronation()
         self.x = 14 + self.position[1] * 94

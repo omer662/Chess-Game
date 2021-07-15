@@ -20,7 +20,6 @@ class Player(object):
         self.tools = king + rooks
         self.enemy = None
         self.castles = [True, True, True]
-        self.game = None
         self.since_pawn_move = 0
 
     def is_checked(self, to_ignore=None):

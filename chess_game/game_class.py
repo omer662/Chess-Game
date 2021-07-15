@@ -5,9 +5,7 @@ class Game(object):
 
     def __init__(self):
         self.player1 = Player(0)
-        self.player1.game = self
         self.player2 = Player(1)
-        self.player2.game = self
         self.player2.enemy = self.player1
         self.player1.enemy = self.player2
 

@@ -16,8 +16,7 @@ class Player(object):
                  for i in range(8)]
         self.team = color
         self.name = "Player %d (%s)" % (color, "white" * (1 - color) + "black" * color)
-        # self.tools = king + queen + bishops + knights + rooks + pawns
-        self.tools = king + rooks
+        self.tools = king + queen + bishops + knights + rooks + pawns
         self.enemy = None
         self.castles = [True, True, True]
         self.since_pawn_move = 0

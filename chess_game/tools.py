@@ -4,12 +4,11 @@ import pyautogui
 
 class Tool(object):
 
-    def __init__(self, name, color, pos, role, player):
+    def __init__(self, name, color, pos, player):
         self.player = player
         self.name = name
         self.team = color  # 0 = white, 1 = black
         self.position = pos
-        self.role = role
         self.icon = None
         self.x = 0
         self.y = 0
@@ -112,7 +111,7 @@ class Tool(object):
 class Pawn(Tool):
 
     def __init__(self, name, color, pos, player):
-        Tool.__init__(self, name, color, pos, "Pawn", player)
+        Tool.__init__(self, name, color, pos, player)
         if color == 0:
             self.icon = pg.image.load(r"imgs\white_pawn.png")
         else:
@@ -158,7 +157,7 @@ class Pawn(Tool):
 class Rook(Tool):
 
     def __init__(self, name, color, pos, player):
-        Tool.__init__(self, name, color, pos, "Rook", player)
+        Tool.__init__(self, name, color, pos, player)
         if color == 0:
             self.icon = pg.image.load(r"imgs\white_rook.png")
         else:
@@ -189,7 +188,7 @@ class Rook(Tool):
 class Bishop(Tool):
 
     def __init__(self, name, color, pos, player):
-        Tool.__init__(self, name, color, pos, "Bishop", player)
+        Tool.__init__(self, name, color, pos, player)
         if color == 0:
             self.icon = pg.image.load(r"imgs\white_bishop.png")
         else:
@@ -220,7 +219,7 @@ class Bishop(Tool):
 class Queen(Tool):
 
     def __init__(self, name, color, pos, player):
-        Tool.__init__(self, name, color, pos, "Queen", player)
+        Tool.__init__(self, name, color, pos, player)
         if color == 0:
             self.icon = pg.image.load(r"imgs\white_queen.png")
         else:
@@ -239,7 +238,7 @@ class Queen(Tool):
 class King(Tool):
 
     def __init__(self, name, color, pos, player):
-        Tool.__init__(self, name, color, pos, "King", player)
+        Tool.__init__(self, name, color, pos, player)
         if color == 0:
             self.icon = pg.image.load(r"imgs\white_king.png")
         else:
@@ -283,7 +282,7 @@ class King(Tool):
 class Knight(Tool):
 
     def __init__(self, name, color, pos, player):
-        Tool.__init__(self, name, color, pos, "Knight", player)
+        Tool.__init__(self, name, color, pos, player)
         if color == 0:
             self.icon = pg.image.load(r"imgs\white_knight.png")
         else:
